@@ -7,6 +7,13 @@ install:
 
 before_script:
   - rake db:migrate RAILS_ENV=test
+  - bundle audit update
 
-script:
-  - rspec
+jobs:
+  include:
+    - stage: brakeman
+      script: brakeman
+    - stage: bundler-audit
+      script: bundle audit
+    - stage: rspec
+      script: rspec
