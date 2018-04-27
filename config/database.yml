@@ -16,9 +16,9 @@ development:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: mara_final_development
+  database: mara_development
   pool:     5
-  username: mara_final
+  username: mara
   password:
   template: template0
 
@@ -44,9 +44,9 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: mara_final_test
+  database: mara_test
   pool:     5
-  username: mara_final
+  username: mara
   password:
   template: template0
 
@@ -54,8 +54,8 @@ production:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: mara_final_production
+  database: mara_production
   pool:     5
-  username: mara_final
+  username: mara
   password:
   template: template0
