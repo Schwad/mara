@@ -2,5 +2,11 @@ sudo: required
 
 language: ruby
 
+install:
+  - bundle install --path vendor/bundle
+
+before_script:
+  - rake db:migrate RAILS_ENV=test
+
 script:
   - rspec
