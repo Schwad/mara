@@ -5,12 +5,14 @@ rvm:
   - 2.4.4
 
 before_install:
+  - cp config/database.yml.example config/database.yml
   - gem update --system
 
 install:
   - bin/bundle install --path vendor/bundle
 
 before_script:
+  - psql -c "CREATE USER mara WITH PASSWORD '';" -U postgres
   - bin/rake db:create RAILS_ENV=test
   - bin/rake db:migrate RAILS_ENV=test
   - bin/bundle audit update
