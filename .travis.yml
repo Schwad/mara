@@ -4,6 +4,9 @@ language: ruby
 rvm:
   - 2.4.4
 
+before_install:
+  - gem update --system
+
 install:
   - bin/bundle install --path vendor/bundle
 
@@ -14,9 +17,9 @@ before_script:
 
 jobs:
   include:
-    - stage: brakeman
-      script: bin/brakeman
-    - stage: bundler-audit
-      script: bin/bundle audit
+    # - stage: brakeman
+    #   script: bin/brakeman
+    # - stage: bundler-audit
+    #   script: bin/bundle audit
     - stage: rspec
       script: bin/rake

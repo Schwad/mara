@@ -27,6 +27,11 @@ Documentation and Support
 * Rubocop
 * Reek
 
+Misc
+----------
+
+* [Mara Slack](https://patagonia-mara.slack.com)
+
 
 Contributing
 ------------
