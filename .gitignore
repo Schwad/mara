@@ -17,6 +17,7 @@ db/*.sqlite3
 *.rbc
 *.sassc
 .redcar/
+nicknotes.txt
 .sass-cache
 /config/config.yml
 /coverage.data

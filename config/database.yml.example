@@ -12,7 +12,7 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: travis
+  database: mara_test
   pool:     5
   username: mara
   password:
