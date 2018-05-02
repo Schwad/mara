@@ -10,6 +10,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'rainbow', '~> 2.2.2'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -48,5 +49,9 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'pronto'
+  gem 'pronto-fasterer', require: false
+  gem 'pronto-reek', require: false
+  gem 'pronto-rubocop', require: false
   gem 'simplecov', require: false
 end
