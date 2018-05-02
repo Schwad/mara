@@ -9,7 +9,7 @@ services:
 
 before_install:
   - cp config/database.yml.example config/database.yml
-  - gem update --system
+  # - gem update --system
 
 install:
   - bin/bundle install --path vendor/bundle
