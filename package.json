@@ -1,5 +1,11 @@
 {
   "name": "mara",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "buildpacks": [
+    { "url": "https://github.com/heroku/heroku-buildpack-ruby" },
+    { "url": "https://github.com/gunpowderlabs/buildpack-ruby-rake-deploy-tasks" }
+  ],
+  "stack": "cedar-14",
+  "image": "heroku/ruby"
 }
