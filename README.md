@@ -1,6 +1,7 @@
 Mara
 ================
 [![Maintainability](https://api.codeclimate.com/v1/badges/a6cec7ae312fd71a8383/maintainability)](https://codeclimate.com/github/Schwad/mara/maintainability)
+[![Build Status](https://travis-ci.org/Schwad/mara.svg?branch=master)](https://travis-ci.org/Schwad/mara)
 
 
 Ruby on Rails
