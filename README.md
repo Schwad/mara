@@ -23,7 +23,7 @@ Documentation and Support
 * Bootstrap
 * JS
 * ERB
-* Simplecov
+* Coveralls
 * Rubocop
 * Reek
 
