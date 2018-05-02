@@ -15,9 +15,9 @@ install:
   - bin/bundle install --path vendor/bundle
 
 before_script:
-  - psql -c "CREATE USER mara WITH PASSWORD '';" -U postgres
+  # - psql -c "CREATE USER mara WITH PASSWORD '';" -U postgres
   - psql -c 'create database mara_test;' -U postgres
-  - bin/rake db:create RAILS_ENV=test
+  # - bin/rake db:create RAILS_ENV=test
   - bin/rake db:migrate RAILS_ENV=test
   - bin/bundle audit update
 
