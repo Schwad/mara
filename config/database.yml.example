@@ -9,14 +9,8 @@ development:
   template: template0
 
 test:
-  adapter:  postgresql
-  host:     localhost
-  encoding: unicode
+  adapter: postgresql
   database: mara_test
-  pool:     5
-  username: mara
-  password:
-  template: template0
 
 production:
   adapter:  postgresql
