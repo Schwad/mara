@@ -30,6 +30,11 @@ Documentation and Support
   - Reek
   - Code Climate
 * Turbolinks
+* Background jobs: Sidekiq
+TODO:
+* Slack integration
+* Twilio integration (pro?)
+* Stripe integration
 
 Misc
 ----------
