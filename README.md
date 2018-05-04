@@ -20,13 +20,16 @@ Documentation and Support
 
 ## Key technologies:
 
-* Postgres
-* Bootstrap
+* DB: Postgres
+* Front-end framework: Bootstrap
 * JS
-* ERB
-* Coveralls
-* Rubocop
-* Reek
+* Templating: ERB
+* Coverage: Coveralls/simplecov
+* Code quality:
+  - Rubocop
+  - Reek
+  - Code Climate
+* Turbolinks
 
 Misc
 ----------
