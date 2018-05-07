@@ -10,7 +10,9 @@ Mara [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitt
 Discussion
 -----------
 
-This application commands a registered Telegram bot to interface with individuals for chronic pain tracking. [The bot is here](t.me/RubyMaraBot.) This primarily relies on the fantastic [telegram_bot](https://github.com/eljojo/telegram_bot) gem built by the wonderful @eljojo. 
+This application commands a registered Telegram bot to interface with individuals for chronic pain tracking. [The bot is here.](t.me/RubyMaraBot.)
+
+This primarily relies on the fantastic [telegram_bot](https://github.com/eljojo/telegram_bot) gem built by the wonderful @eljojo.
 
 Ruby on Rails
 -------------
@@ -26,9 +28,7 @@ Getting Started
 Documentation and Support
 -------------------------
 
-Official documentation is built as [discussed here](https://everydayrails.com/2017/03/01/rails-5-app-documentation.html)
-
-
+Full documentation for this application is [available here](https://schwad.github.io/mara/).
 
 ## Key technologies:
 
