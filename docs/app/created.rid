@@ -1,5 +1,5 @@
-Mon, 07 May 2018 13:25:50 +0100
-README.md	Mon, 07 May 2018 13:04:13 +0100
+Mon, 07 May 2018 13:45:32 +0100
+README.md	Mon, 07 May 2018 13:26:31 +0100
 app/assets/config/manifest.js	Fri, 27 Apr 2018 17:10:40 +0100
 app/assets/javascripts/application.js	Fri, 04 May 2018 18:02:46 +0100
 app/assets/javascripts/cable.js	Fri, 27 Apr 2018 17:10:40 +0100
@@ -9,7 +9,7 @@ app/assets/stylesheets/test.scss	Wed, 02 May 2018 16:47:19 +0100
 app/channels/application_cable/channel.rb	Fri, 27 Apr 2018 17:10:40 +0100
 app/channels/application_cable/connection.rb	Fri, 27 Apr 2018 17:10:40 +0100
 app/controllers/application_controller.rb	Fri, 27 Apr 2018 17:10:40 +0100
-app/controllers/visitors_controller.rb	Fri, 27 Apr 2018 17:25:55 +0100
+app/controllers/visitors_controller.rb	Mon, 07 May 2018 13:44:57 +0100
 app/helpers/application_helper.rb	Fri, 27 Apr 2018 17:10:40 +0100
 app/jobs/application_job.rb	Fri, 27 Apr 2018 17:10:40 +0100
 app/mailers/application_mailer.rb	Fri, 27 Apr 2018 17:10:40 +0100
@@ -37,5 +37,5 @@ app/views/layouts/application.html.erb	Fri, 27 Apr 2018 17:32:27 +0100
 app/views/layouts/mailer.html.erb	Fri, 27 Apr 2018 17:10:40 +0100
 app/views/layouts/mailer.text.erb	Fri, 27 Apr 2018 17:10:40 +0100
 app/views/visitors/index.html.erb	Wed, 02 May 2018 16:39:17 +0100
-lib/tasks/rdoc.rake	Mon, 07 May 2018 13:24:02 +0100
+lib/tasks/rdoc.rake	Mon, 07 May 2018 13:30:30 +0100
 lib/templates/erb/scaffold/_form.html.erb	Fri, 27 Apr 2018 17:12:58 +0100
