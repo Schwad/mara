@@ -21,6 +21,7 @@ install:
 before_script:
   - psql -c 'create database mara_test;' -U postgres
   - bin/rake db:migrate RAILS_ENV=test
+  
 jobs:
   include:
     - stage: rspec
