@@ -13,6 +13,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rainbow', '~> 2.2.2'
+gem 'sdoc'
 gem 'sidekiq'
 gem 'stripe'
 group :development, :test do

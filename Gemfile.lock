@@ -259,6 +259,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    rdoc (5.0.0)
     redis (4.0.1)
     reek (4.8.1)
       codeclimate-engine-rb (~> 0.4.0)
@@ -315,6 +316,8 @@ GEM
     sawyer (0.8.1)
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)
+    sdoc (1.0.0)
+      rdoc (>= 5.0)
     selenium-webdriver (3.11.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
@@ -423,6 +426,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
+  sdoc
   selenium-webdriver
   sidekiq
   simple_form

@@ -21,6 +21,10 @@ Getting Started
 Documentation and Support
 -------------------------
 
+Official documentation is built as [discussed here](https://everydayrails.com/2017/03/01/rails-5-app-documentation.html)
+
+
+
 ## Key technologies:
 
 * DB: Postgres
