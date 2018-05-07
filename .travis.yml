@@ -25,10 +25,10 @@ jobs:
   include:
     - stage: rspec
       script: bin/rake
-    - stage: brakeman
+    - stage: bundle exec brakeman
       script: brakeman
     - stage: bundler-audit
-      script: bin/bundle audit
+      script: bundle exec bundle-audit
     allow_failures:
       - stage: rubocop
         script:
