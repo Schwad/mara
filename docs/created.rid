@@ -1,4 +1,4 @@
-Mon, 07 May 2018 14:08:46 +0100
+Mon, 07 May 2018 14:10:25 +0100
 README.md	Mon, 07 May 2018 13:48:39 +0100
 app/assets/config/manifest.js	Fri, 27 Apr 2018 17:10:40 +0100
 app/assets/javascripts/application.js	Fri, 04 May 2018 18:02:46 +0100
@@ -38,5 +38,5 @@ app/views/layouts/application.html.erb	Fri, 27 Apr 2018 17:32:27 +0100
 app/views/layouts/mailer.html.erb	Fri, 27 Apr 2018 17:10:40 +0100
 app/views/layouts/mailer.text.erb	Fri, 27 Apr 2018 17:10:40 +0100
 app/views/visitors/index.html.erb	Wed, 02 May 2018 16:39:17 +0100
-lib/tasks/rdoc.rake	Mon, 07 May 2018 13:30:30 +0100
+lib/tasks/rdoc.rake	Mon, 07 May 2018 14:10:12 +0100
 lib/templates/erb/scaffold/_form.html.erb	Fri, 27 Apr 2018 17:12:58 +0100
