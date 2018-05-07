@@ -2,7 +2,7 @@ require 'sdoc'
 require 'rdoc/task'
 
 RDoc::Task.new do |rdoc|
-  rdoc.rdoc_dir = 'doc/app'
+  rdoc.rdoc_dir = 'docs/app'
   rdoc.generator = 'sdoc'
   rdoc.template = 'rails'
   rdoc.main = 'README.md'
