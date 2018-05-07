@@ -7,6 +7,11 @@ Mara [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitt
 
 [Mara Slack](https://patagonia-mara.slack.com)
 
+Discussion
+-----------
+
+This application commands a registered Telegram bot to interface with individuals for chronic pain tracking. [The bot is here](t.me/RubyMaraBot.) This primarily relies on the fantastic [telegram_bot](https://github.com/eljojo/telegram_bot) gem built by the wonderful @eljojo. 
+
 Ruby on Rails
 -------------
 
