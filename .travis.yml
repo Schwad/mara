@@ -8,6 +8,9 @@ rvm:
 services:
   - postgresql
 
+notifications:
+  slack: patagonia-mara:xaEjhNnxt9qqXGyyqyGXUfDF
+
 before_install:
   - cp config/database.yml.example config/database.yml
   - gem update --system
@@ -20,10 +23,10 @@ before_script:
   - bin/rake db:migrate RAILS_ENV=test
 jobs:
   include:
-    # - stage: brakeman
-    #   script: bin/brakeman
-    # - stage: bundler-audit
-    #   script: bin/bundle audit
+    - stage: brakeman
+      script: bin/brakeman
+    - stage: bundler-audit
+      script: bin/bundle audit
     - stage: rspec
       script: bin/rake
     - stage: rubocop
