@@ -4,7 +4,9 @@ Mara [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitt
 [![Build Status](https://travis-ci.org/Schwad/mara.svg?branch=master)](https://travis-ci.org/Schwad/mara)
 [![Coverage Status](https://coveralls.io/repos/github/Schwad/mara/badge.svg?branch=master)](https://coveralls.io/github/Schwad/mara?branch=master)
 [![Inline docs](http://inch-ci.org/github/schwad/mara.svg?branch=master)](http://inch-ci.org/github/schwad/mara)
+
 [Mara Slack](https://patagonia-mara.slack.com)
+
 Ruby on Rails
 -------------
 
@@ -36,6 +38,7 @@ Documentation and Support
 TODO:
 * Twilio integration
 * Telegram Integration with Telegram_Bot
+* Set up production error monitoring
 
 Misc
 ----------
