@@ -16,6 +16,7 @@ gem 'rainbow', '~> 2.2.2'
 gem 'sdoc'
 gem 'sidekiq'
 gem 'stripe'
+gem 'telegram_bot'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
