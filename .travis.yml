@@ -23,24 +23,25 @@ before_script:
   - bin/rake db:migrate RAILS_ENV=test
 jobs:
   include:
+    - stage: rspec
+      script: bin/rake
     - stage: brakeman
       script: brakeman
     - stage: bundler-audit
       script: bin/bundle audit
-    - stage: rspec
-      script: bin/rake
-    - stage: rubocop
-      script:
-        - var="$(bundle exec pronto run -r rubocop -c origin/master)"
-        - echo $var
-        - if [[ -z $var ]]; then exit 0; else exit 1; fi
-    - stage: reek
-      script:
-        - var="$(bundle exec pronto run -r reek -c origin/master)"
-        - echo $var
-        - if [[ -z $var ]]; then exit 0; else exit 1; fi
-    - stage: fasterer
-      script:
-        - var="$(bundle exec pronto run -r fasterer -c origin/master)"
-        - echo $var
-        - if [[ -z $var ]]; then exit 0; else exit 1; fi
+    allow_failures:
+      - stage: rubocop
+        script:
+          - var="$(bundle exec pronto run -r rubocop -c origin/master)"
+          - echo $var
+          - if [[ -z $var ]]; then exit 0; else exit 1; fi
+      - stage: reek
+        script:
+          - var="$(bundle exec pronto run -r reek -c origin/master)"
+          - echo $var
+          - if [[ -z $var ]]; then exit 0; else exit 1; fi
+      - stage: fasterer
+        script:
+          - var="$(bundle exec pronto run -r fasterer -c origin/master)"
+          - echo $var
+          - if [[ -z $var ]]; then exit 0; else exit 1; fi
