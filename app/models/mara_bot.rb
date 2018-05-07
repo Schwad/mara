@@ -5,6 +5,7 @@
 # Any bot interactions must be done explicitly through this object and not directly through the Telegram_Bot.
 
 class MaraBot
+  include Sidekiq::Worker
 
   MARA_BOT_KEY = ENV['mara_bot_key']
 
@@ -19,8 +20,7 @@ class MaraBot
   ##
   # Runs the bot, it must always be running 'live' on its own process/worker in
   # order to receive updates.
-
-  def run
+  def perform_async
     @bot.get_updates(fail_silently: true) do |message|
       puts "@#{message.from.username}: #{message.text}"
       command = message.get_command_for(@bot)
@@ -37,6 +37,4 @@ class MaraBot
       end
     end
   end
-
-
 end

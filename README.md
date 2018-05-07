@@ -44,15 +44,17 @@ Full documentation for this application is [available here](https://schwad.githu
   - Reek
   - Code Climate
 * Background jobs: Sidekiq
+
 TODO:
 * Twilio integration
-* Telegram Integration with Telegram_Bot
+* Set up background async job/worker processing to run bot
+* Come up with effective marabot tests
+* Knock down documentation
 * Set up production error monitoring
+* Extend bot further for practical use
 
 Misc
 ----------
-
-
 
 
 Contributing
