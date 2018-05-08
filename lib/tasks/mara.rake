@@ -8,4 +8,10 @@ namespace :mara do
   task kill: :environment do
     Sidekiq.redis { |conn| conn.flushdb }
   end
+
+  desc 'kills and resets mara, needed for updating bot'
+  task reset: :environment do
+    system('rake mara:kill')
+    system('rake mara:start')
+  end
 end
