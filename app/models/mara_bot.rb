@@ -20,7 +20,7 @@ class MaraBot
   ##
   # Runs the bot, it must always be running 'live' on its own process/worker in
   # order to receive updates.
-  def perform_async
+  def perform
     @bot.get_updates(fail_silently: true) do |message|
       puts "@#{message.from.username}: #{message.text}"
       command = message.get_command_for(@bot)
