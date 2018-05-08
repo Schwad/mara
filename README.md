@@ -43,7 +43,9 @@ Full documentation for this application is [available here](https://schwad.githu
   - Rubocop
   - Reek
   - Code Climate
-* Background jobs: Sidekiq
+* Background jobs:
+  - Sidekiq
+  - Redis ([with Heroku Redis](https://elements.heroku.com/addons/heroku-redis))
 
 TODO:
 * Twilio integration
