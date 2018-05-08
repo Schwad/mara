@@ -13,10 +13,10 @@ module BotUtils
       def verify_user(message)
         puts 'Verifying...'
         message.reply do |reply|
-          if message.from.username == 'schwadererer'
-            reply.text = 'Confirming message'
+          if User.exists?(friendly_name: message.from.username)
+            reply.text = "Oh, I know who you are #{message.from.first_name}"
           else
-            reply.text = 'mmmmno wai'
+            reply.text = 'dunno you'
           end
           reply.send_with(@bot)
         end

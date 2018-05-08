@@ -3,4 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, password_length: 12..128
+
+  validates :friendly_name, presence: true
 end
