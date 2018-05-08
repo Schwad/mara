@@ -14,7 +14,7 @@ module BotUtils
         puts 'Verifying...'
         message.reply do |reply|
           if message.from.username == 'schwadererer'
-            reply.text = 'yo playa'
+            reply.text = 'Confirming message'
           else
             reply.text = 'mmmmno wai'
           end
