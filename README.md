@@ -22,8 +22,14 @@ This application requires:
 - Ruby 2.4.4
 - Rails 5.2.0
 
-Getting Started
+General Notes
 ---------------
+
+MaraBot does not currently persist or 'remember' conversation state and history, although this is likely to change in the future.
+
+The Bot is run as a background job with Sidekiq/Redis, and is initialized in the Procfile like so:
+
+`web: rake mara:start && bundle exec rails server -p $PORT`
 
 Documentation and Support
 -------------------------
