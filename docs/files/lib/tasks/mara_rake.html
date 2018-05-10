@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>user.rb</title>
+    <title>mara.rake</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
@@ -16,41 +16,56 @@
     <div class="banner">
         
         <h1>
-            user.rb
+            mara.rake
         </h1>
         <ul class="files">
             
             <li>
-                app/models/user.rb
+                lib/tasks/mara.rake
                 
             </li>
-            <li>Last modified: 2018-05-08 23:43:15 +0100</li>
+            <li>Last modified: 2018-05-09 21:46:04 +0100</li>
         </ul>
     </div>
 
     <div id="bodyContent">
         <div id="content">
   
-
-
-  
-
-
-  
-  
-
-
-  
-    <!-- Namespace -->
-    <div class="sectiontitle">Namespace</div>
-    <ul>
+    <div class="description">
       
-        <li>
-          <span class="type">CLASS</span>
-          <a href="../../../classes/User.html">User</a>
-        </li>
-      
-    </ul>
+<p>namespace :mara do</p>
+
+<pre><code>desc &#39;initializes mara bot&#39;
+task start: :environment do
+  MaraBot.perform_async
+end
+
+desc &#39;destroys all Sidekiq processes&#39;
+task kill: :environment do
+  Sidekiq.redis { |conn| conn.flushdb }
+end
+
+desc &#39;kills and resets mara, needed for updating bot&#39;
+task reset: :environment do
+  system(&#39;rake mara:kill&#39;)
+  system(&#39;rake mara:start&#39;)
+  puts &#39;MaraBot reset!&#39;
+end
+</code></pre>
+
+<p>end</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
   
 
 

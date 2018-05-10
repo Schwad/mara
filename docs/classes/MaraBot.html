@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="MaraBot class">
   
-    <meta name="keywords" content="new, run">
+    <meta name="keywords" content="new, perform, ping_user, send_user_custom_message">
   
 </head>
 
@@ -89,13 +89,30 @@ this object and not directly through the Telegram_Bot.</p>
           </ul>
         </dd>
       
-        <dt>R</dt>
+        <dt>P</dt>
         <dd>
           <ul>
             
               
               <li>
-                <a href="#method-i-run">run</a>
+                <a href="#method-i-perform">perform</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ping_user">ping_user</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-send_user_custom_message">send_user_custom_message</a>
               </li>
             
           </ul>
@@ -104,6 +121,26 @@ this object and not directly through the Telegram_Bot.</p>
     </dl>
   
 
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            Sidekiq::Worker
+          
+        </li>
+      
+        <li>
+          
+            <a href="BotUtils.html">
+              BotUtils
+            </a>
+          
+        </li>
+      
+    </ul>
   
 
 
@@ -127,7 +164,7 @@ this object and not directly through the Telegram_Bot.</p>
           
             <tr valign='top'>
               <td>&nbsp;</td>
-              <td colspan="2" class="attr-desc"></td>
+              <td colspan="2" class="attr-desc"><p>Environment variable for main mara bot.</p></td>
             </tr>
           
         
@@ -170,7 +207,7 @@ this object and not directly through the Telegram_Bot.</p>
                 
               </p>
               <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 15</span>
+                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
   <span class="ruby-ivar">@bot</span> = <span class="ruby-constant">TelegramBot</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">token</span><span class="ruby-operator">:</span> <span class="ruby-constant">MARA_BOT_KEY</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -184,17 +221,17 @@ this object and not directly through the Telegram_Bot.</p>
       <div class="sectiontitle">Instance Public methods</div>
       
         <div class="method">
-          <div class="title method-title" id="method-i-run">
+          <div class="title method-title" id="method-i-perform">
             
-              <b>run</b>()
+              <b>perform</b>()
             
-            <a href="../classes/MaraBot.html#method-i-run" name="method-i-run" class="permalink">Link</a>
+            <a href="../classes/MaraBot.html#method-i-perform" name="method-i-perform" class="permalink">Link</a>
           </div>
 
           
             <div class="description">
               <p>Runs the bot, it must always be running &#39;live&#39; on its own
-process/worker in order to receive updates.</p>
+process/worker in order to receive updates. This is done via the Procfile.</p>
             </div>
           
 
@@ -208,27 +245,99 @@ process/worker in order to receive updates.</p>
               
               <p class="source-link">
                 Source:
-                <a href="javascript:toggleSource('method-i-run_source')" id="l_method-i-run_source">show</a>
+                <a href="javascript:toggleSource('method-i-perform_source')" id="l_method-i-perform_source">show</a>
                 
               </p>
-              <div id="method-i-run_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 23</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>
+              <div id="method-i-perform_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">perform</span>
   <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">get_updates</span>(<span class="ruby-identifier">fail_silently</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">message</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;@#{message.from.username}: #{message.text}&quot;</span>
-    <span class="ruby-identifier">command</span> = <span class="ruby-identifier">message</span>.<span class="ruby-identifier">get_command_for</span>(<span class="ruby-ivar">@bot</span>)
-
-    <span class="ruby-identifier">message</span>.<span class="ruby-identifier">reply</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">reply</span><span class="ruby-operator">|</span>
-      <span class="ruby-keyword">case</span> <span class="ruby-identifier">command</span>
-      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/greet/i</span>
-        <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">text</span> = <span class="ruby-node">&quot;Hello, #{message.from.first_name}!&quot;</span>
-      <span class="ruby-keyword">else</span>
-        <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">text</span> = <span class="ruby-node">&quot;#{message.from.first_name}, have no idea what #{command.inspect} means.&quot;</span>
-      <span class="ruby-keyword">end</span>
-      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;sending #{reply.text.inspect} to @#{message.from.username}&quot;</span>
-      <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">send_with</span>(<span class="ruby-ivar">@bot</span>)
-    <span class="ruby-keyword">end</span>
+    <span class="ruby-constant">ManageMessage</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">bot</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@bot</span>, <span class="ruby-identifier">message</span><span class="ruby-operator">:</span> <span class="ruby-identifier">message</span>)
   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ping_user">
+            
+              <b>ping_user</b>(user)
+            
+            <a href="../classes/MaraBot.html#method-i-ping_user" name="method-i-ping_user" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Pings the user to request for new data inputs, called in a rake task and
+called via a scheduler.</p>
+
+<p>The pings and receipt performance are not &#39;linked&#39; in a
+conversation and are unrelated.</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-ping_user_source')" id="l_method-i-ping_user_source">show</a>
+                
+              </p>
+              <div id="method-i-ping_user_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ping_user</span>(<span class="ruby-identifier">user</span>)
+  <span class="ruby-identifier">channel</span> = <span class="ruby-constant">TelegramBot</span><span class="ruby-operator">::</span><span class="ruby-constant">Channel</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">username</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">friendly_name</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">chat_id</span>)
+  <span class="ruby-identifier">out_message</span> = <span class="ruby-constant">TelegramBot</span><span class="ruby-operator">::</span><span class="ruby-constant">OutMessage</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">chat</span><span class="ruby-operator">:</span> <span class="ruby-identifier">channel</span>, <span class="ruby-identifier">text</span><span class="ruby-operator">:</span> <span class="ruby-constant">PetitionForInfo</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">user</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>).<span class="ruby-identifier">response</span>)
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">send_message</span>(<span class="ruby-identifier">out_message</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-send_user_custom_message">
+            
+              <b>send_user_custom_message</b>(user, message)
+            
+            <a href="../classes/MaraBot.html#method-i-send_user_custom_message" name="method-i-send_user_custom_message" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>This is a utility to allow for <a href="MaraBot.html">MaraBot</a> to
+quickly send customized messages to specified approved users. Simply supply
+user object and message.</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-send_user_custom_message_source')" id="l_method-i-send_user_custom_message_source">show</a>
+                
+              </p>
+              <div id="method-i-send_user_custom_message_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send_user_custom_message</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">message</span>)
+  <span class="ruby-identifier">channel</span> = <span class="ruby-constant">TelegramBot</span><span class="ruby-operator">::</span><span class="ruby-constant">Channel</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">username</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">friendly_name</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">chat_id</span>)
+  <span class="ruby-identifier">out_message</span> = <span class="ruby-constant">TelegramBot</span><span class="ruby-operator">::</span><span class="ruby-constant">OutMessage</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">chat</span><span class="ruby-operator">:</span> <span class="ruby-identifier">channel</span>, <span class="ruby-identifier">text</span><span class="ruby-operator">:</span> <span class="ruby-identifier">message</span>)
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">send_message</span>(<span class="ruby-identifier">out_message</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

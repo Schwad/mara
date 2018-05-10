@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>user.rb</title>
+    <title>verify_user.rb</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
@@ -16,20 +16,28 @@
     <div class="banner">
         
         <h1>
-            user.rb
+            verify_user.rb
         </h1>
         <ul class="files">
             
             <li>
-                app/models/user.rb
+                app/interactors/verify_user.rb
                 
             </li>
-            <li>Last modified: 2018-05-08 23:43:15 +0100</li>
+            <li>Last modified: 2018-05-10 15:49:03 +0100</li>
         </ul>
     </div>
 
     <div id="bodyContent">
         <div id="content">
+  
+    <div class="description">
+      
+<p>Interactor object that runs at the front of the `ManageMessage` interactor,
+ensuring that all handled messages are from verified users. Rate limits if
+not.</p>
+
+    </div>
   
 
 
@@ -47,7 +55,7 @@
       
         <li>
           <span class="type">CLASS</span>
-          <a href="../../../classes/User.html">User</a>
+          <a href="../../../classes/VerifyUser.html">VerifyUser</a>
         </li>
       
     </ul>

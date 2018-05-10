@@ -1,5 +1,5 @@
-Mon, 07 May 2018 14:13:42 +0100
-README.md	Mon, 07 May 2018 14:12:20 +0100
+Thu, 10 May 2018 16:17:38 +0100
+README.md	Thu, 10 May 2018 15:24:06 +0100
 app/assets/config/manifest.js	Fri, 27 Apr 2018 17:10:40 +0100
 app/assets/javascripts/application.js	Fri, 04 May 2018 18:02:46 +0100
 app/assets/javascripts/cable.js	Fri, 27 Apr 2018 17:10:40 +0100
@@ -11,11 +11,19 @@ app/channels/application_cable/connection.rb	Fri, 27 Apr 2018 17:10:40 +0100
 app/controllers/application_controller.rb	Fri, 27 Apr 2018 17:10:40 +0100
 app/controllers/visitors_controller.rb	Mon, 07 May 2018 13:44:57 +0100
 app/helpers/application_helper.rb	Fri, 27 Apr 2018 17:10:40 +0100
+app/interactors/check_the_weather.rb	Thu, 10 May 2018 15:48:29 +0100
+app/interactors/handle_any_commands.rb	Thu, 10 May 2018 15:53:58 +0100
+app/interactors/manage_message.rb	Thu, 10 May 2018 15:52:50 +0100
+app/interactors/petition_for_info.rb	Thu, 10 May 2018 15:36:45 +0100
+app/interactors/record_data_point.rb	Thu, 10 May 2018 15:49:57 +0100
+app/interactors/thank_the_user.rb	Thu, 10 May 2018 16:04:37 +0100
+app/interactors/verify_user.rb	Thu, 10 May 2018 15:49:03 +0100
 app/jobs/application_job.rb	Fri, 27 Apr 2018 17:10:40 +0100
 app/mailers/application_mailer.rb	Fri, 27 Apr 2018 17:10:40 +0100
 app/models/application_record.rb	Fri, 27 Apr 2018 17:10:40 +0100
-app/models/mara_bot.rb	Mon, 07 May 2018 14:08:13 +0100
-app/models/user.rb	Wed, 02 May 2018 18:22:12 +0100
+app/models/concerns/bot_utils.rb	Wed, 09 May 2018 22:44:42 +0100
+app/models/mara_bot.rb	Thu, 10 May 2018 15:40:30 +0100
+app/models/user.rb	Tue, 08 May 2018 23:43:15 +0100
 app/views/devise/confirmations/new.html.erb	Fri, 27 Apr 2018 17:13:40 +0100
 app/views/devise/mailer/confirmation_instructions.html.erb	Fri, 27 Apr 2018 17:13:54 +0100
 app/views/devise/mailer/email_changed.html.erb	Fri, 27 Apr 2018 17:13:54 +0100
@@ -37,5 +45,6 @@ app/views/layouts/application.html.erb	Fri, 27 Apr 2018 17:32:27 +0100
 app/views/layouts/mailer.html.erb	Fri, 27 Apr 2018 17:10:40 +0100
 app/views/layouts/mailer.text.erb	Fri, 27 Apr 2018 17:10:40 +0100
 app/views/visitors/index.html.erb	Wed, 02 May 2018 16:39:17 +0100
+lib/tasks/mara.rake	Wed, 09 May 2018 21:46:04 +0100
 lib/tasks/rdoc.rake	Mon, 07 May 2018 14:10:12 +0100
 lib/templates/erb/scaffold/_form.html.erb	Fri, 27 Apr 2018 17:12:58 +0100

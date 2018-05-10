@@ -24,7 +24,7 @@
                 README.md
                 
             </li>
-            <li>Last modified: 2018-05-07 14:12:20 +0100</li>
+            <li>Last modified: 2018-05-10 15:24:06 +0100</li>
         </ul>
     </div>
 
@@ -65,7 +65,25 @@ the wonderful @eljojo.</p>
 <p>Rails 5.2.0</p>
 </li></ul>
 
-<h2 id="label-Getting+Started">Getting Started</h2>
+<h2 id="label-General+Notes">General Notes</h2>
+
+<p><a href="../classes/MaraBot.html">MaraBot</a> does not currently persist or
+&#39;remember&#39; conversation state and history, although this is likely
+to change in the future.</p>
+
+<p>The Bot is run as a background job with Sidekiq/Redis, and is initialized
+in the Procfile like so:</p>
+
+<p><code>web: rake mara:start &amp;&amp; bundle exec rails server -p
+$PORT</code></p>
+
+<p>To work with <a href="../classes/MaraBot.html">MaraBot</a> in development,
+you fire it up with <code>rake mara:reset</code> (kills any active bots and
+starts a new one).</p>
+
+<p>This application uses the Interactor design pattern (<a
+href="https://github.com/collectiveidea/interactor">implemented with the
+interactor gem</a>) to process bot interactions.</p>
 
 <h2 id="label-Documentation+and+Support">Documentation and Support</h2>
 
@@ -96,14 +114,27 @@ href="https://schwad.github.io/mara/">available here</a>.</p>
 </li><li>
 <p>Code Climate</p>
 </li><li>
-<p>Background jobs: Sidekiq TODO:</p>
+<p>Background jobs:</p>
 </li><li>
-<p>Twilio integration</p>
+<p>Sidekiq</p>
 </li><li>
-<p>Telegram Integration with Telegram_Bot</p>
+<p>Redis (<a href="https://elements.heroku.com/addons/heroku-redis">with
+Heroku Redis</a>)</p>
 </li><li>
-<p>Set up production error monitoring</p>
+<p>Notable</p>
+</li><li>
+<p><a href="https://github.com/collectiveidea/interactor">Interactor gem</a></p>
 </li></ul>
+
+<p>TODO: * Instantiate a different scheduled chatbot instance to allow
+MaraBotMaster to speak with <a href="../classes/MaraBot.html">MaraBot</a> *
+Allow <a href="../classes/MaraBot.html">MaraBot</a> to be supplied a
+username and message a user directly from there. (Maybe I can manually
+reset the message&#39;s user.) * Come up with effective marabot tests *
+Fill out interactor specs * Knock down all documentation * Set up
+production error monitoring * Extend bot further for practical use * Much
+later on - build out bot to handle open world users, i.e. add step to
+interactor to manage user and accept them, and get their chat id.</p>
 
 <h2 id="label-Misc">Misc</h2>
 
