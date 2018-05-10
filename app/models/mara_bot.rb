@@ -6,7 +6,11 @@
 
 class MaraBot
   include Sidekiq::Worker
-  include BotUtils::VerifyUser
+  include BotUtils
+
+  ##
+  # Environment variable for main mara bot.
+  #
 
   MARA_BOT_KEY = ENV['mara_bot_key']
 
@@ -23,20 +27,29 @@ class MaraBot
   # order to receive updates. This is done via the Procfile.
   def perform
     @bot.get_updates(fail_silently: true) do |message|
-      verify_user(message)
-      # puts "@#{message.from.username}: #{message.text}"
-      # command = message.get_command_for(@bot)
-      #
-      # message.reply do |reply|
-      #   case command
-      #   when /greet/i
-      #     reply.text = "Hello, #{message.from.first_name}!"
-      #   else
-      #     reply.text = "#{message.from.first_name}, have no idea what #{command.inspect} means."
-      #   end
-      #   puts "sending #{reply.text.inspect} to @#{message.from.username}"
-      #   reply.send_with(@bot)
-      # end
+      ManageMessage.call(bot: @bot, message: message)
     end
   end
+
+  ##
+  # Pings the user to request for new data inputs, called in a rake task and called via a scheduler.
+  #
+  # The pings and receipt performance are not 'linked' in a conversation and are unrelated.
+
+  def ping_user(user)
+    channel = TelegramBot::Channel.new(username: user.friendly_name, id: user.chat_id)
+    out_message = TelegramBot::OutMessage.new(chat: channel, text: PetitionForInfo.call(user: user).response)
+    @bot.send_message(out_message)
+  end
+
+  ##
+  # This is a utility to allow for MaraBot to quickly send customized messages to specified approved users. Simply supply user object and message.
+  #
+
+  def send_user_custom_message(user, message)
+    channel = TelegramBot::Channel.new(username: user.friendly_name, id: user.chat_id)
+    out_message = TelegramBot::OutMessage.new(chat: channel, text: message)
+    @bot.send_message(out_message)
+  end
+
 end

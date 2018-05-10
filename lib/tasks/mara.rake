@@ -13,5 +13,6 @@ namespace :mara do
   task reset: :environment do
     system('rake mara:kill')
     system('rake mara:start')
+    puts 'MaraBot reset!'
   end
 end

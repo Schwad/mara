@@ -1,6 +1,8 @@
 AllCops:
   Rails:
     Enabled: true
+  Metrics/LineLength:
+    Enabled: false
   Include:
     - '**/Gemfile'
     - '**/Rakefile'

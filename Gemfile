@@ -10,13 +10,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'coveralls', require: false
 gem 'turbolinks', '~> 5'
+gem 'interactor-rails', '~> 2.0'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rainbow', '~> 2.2.2'
 gem 'sdoc'
 gem 'sidekiq'
 gem 'stripe'
-gem 'telegram_bot'
+gem 'telegram_bot', git: 'https://github.com/merlos/telegram_bot'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

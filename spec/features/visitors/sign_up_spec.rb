@@ -4,16 +4,6 @@
 #   So I can visit protected areas of the site
 feature 'Sign Up', :devise do
 
-  # Scenario: Visitor can sign up with valid email address and password
-  #   Given I am not signed in
-  #   When I sign up with a valid email address and password
-  #   Then I see a successful sign up message
-  scenario 'visitor can sign up with valid email address and password' do
-    sign_up_with('test@example.com', 'test-password-085472', 'test-password-085472')
-    txts = [I18n.t( 'devise.registrations.signed_up'), I18n.t( 'devise.registrations.signed_up_but_unconfirmed')]
-    expect(page).to have_content(/.*#{txts[0]}.*|.*#{txts[1]}.*/)
-  end
-
   # Scenario: Visitor cannot sign up with invalid email address
   #   Given I am not signed in
   #   When I sign up with an invalid email address

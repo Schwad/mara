@@ -31,6 +31,10 @@ The Bot is run as a background job with Sidekiq/Redis, and is initialized in the
 
 `web: rake mara:start && bundle exec rails server -p $PORT`
 
+To work with MaraBot in development, you fire it up with `rake mara:reset` (kills any active bots and starts a new one).
+
+This application uses the Interactor design pattern ([implemented with the interactor gem](https://github.com/collectiveidea/interactor)) to process bot interactions.
+
 Documentation and Support
 -------------------------
 
@@ -52,14 +56,18 @@ Full documentation for this application is [available here](https://schwad.githu
 * Background jobs:
   - Sidekiq
   - Redis ([with Heroku Redis](https://elements.heroku.com/addons/heroku-redis))
+* Notable
+  - [Interactor gem](https://github.com/collectiveidea/interactor)
 
 TODO:
-* Twilio integration
-* Set up background async job/worker processing to run bot
+* Instantiate a different scheduled chatbot instance to allow MaraBotMaster to speak with MaraBot
+* Allow MaraBot to be supplied a username and message a user directly from there. (Maybe I can manually reset the message's user.)
 * Come up with effective marabot tests
-* Knock down documentation
+* Fill out interactor specs
+* Knock down all documentation
 * Set up production error monitoring
 * Extend bot further for practical use
+* Much later on - build out bot to handle open world users, i.e. add step to interactor to manage user and accept them, and get their chat id. 
 
 Misc
 ----------
