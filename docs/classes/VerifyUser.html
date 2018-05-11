@@ -160,6 +160,8 @@ not.</p>
     <span class="ruby-keyword">end</span>
     <span class="ruby-identifier">context</span>.<span class="ruby-identifier">fail!</span>
   <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">incoming_message</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">get_command_for</span>(<span class="ruby-identifier">context</span>.<span class="ruby-identifier">bot</span>)
+  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">friendly_name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">from</span>.<span class="ruby-identifier">username</span>)
   <span class="ruby-identifier">context</span>.<span class="ruby-identifier">response</span> = <span class="ruby-string">&#39;Verify User interactor&#39;</span>
 <span class="ruby-keyword">end</span></pre>
               </div>

@@ -152,6 +152,10 @@ if API fails.</p>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">call</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;Check the weather&#39;</span>
   <span class="ruby-identifier">context</span>.<span class="ruby-identifier">response</span> = <span class="ruby-string">&#39;Check the weather&#39;</span>
+  <span class="ruby-identifier">w_api</span> = <span class="ruby-constant">Wunderground</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;WUNDERGROUND_API_KEY&#39;</span>]).<span class="ruby-identifier">conditions_for</span>(<span class="ruby-string">&quot;Lostwithiel, UK&quot;</span>)[<span class="ruby-string">&#39;current_observation&#39;</span>]
+  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">pressure</span> = <span class="ruby-identifier">w_api</span>[<span class="ruby-string">&#39;pressure_mb&#39;</span>].<span class="ruby-identifier">to_f</span>
+  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">temperature</span> = <span class="ruby-identifier">w_api</span>[<span class="ruby-string">&#39;temp_c&#39;</span>]
+  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">full_weather_record</span> = <span class="ruby-identifier">w_api</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

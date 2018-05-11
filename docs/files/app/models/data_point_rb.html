@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>verify_user.rb</title>
+    <title>data_point.rb</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
@@ -16,15 +16,15 @@
     <div class="banner">
         
         <h1>
-            verify_user.rb
+            data_point.rb
         </h1>
         <ul class="files">
             
             <li>
-                app/interactors/verify_user.rb
+                app/models/data_point.rb
                 
             </li>
-            <li>Last modified: 2018-05-11 21:09:54 +0100</li>
+            <li>Last modified: 2018-05-11 20:31:17 +0100</li>
         </ul>
     </div>
 
@@ -33,9 +33,10 @@
   
     <div class="description">
       
-<p>Interactor object that runs at the front of the `ManageMessage` interactor,
-ensuring that all handled messages are from verified users. Rate limits if
-not.</p>
+<p>This stores the realtime pain data against weather. Often used data is
+accessed via the accessors associated with the `weather_data` store. A full
+snapshot of the weather for future use from Weather Underground is stored
+as a serialized hash in the `full_weather_record`.</p>
 
     </div>
   
@@ -55,7 +56,7 @@ not.</p>
       
         <li>
           <span class="type">CLASS</span>
-          <a href="../../../classes/VerifyUser.html">VerifyUser</a>
+          <a href="../../../classes/DataPoint.html">DataPoint</a>
         </li>
       
     </ul>
