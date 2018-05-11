@@ -18,6 +18,7 @@ gem 'sdoc'
 gem 'sidekiq'
 gem 'stripe'
 gem 'telegram_bot', git: 'https://github.com/merlos/telegram_bot'
+gem 'wunderground'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

@@ -56,8 +56,10 @@ Full documentation for this application is [available here](https://schwad.githu
 * Background jobs:
   - Sidekiq
   - Redis ([with Heroku Redis](https://elements.heroku.com/addons/heroku-redis))
+* Weather tracking: [Wunderground Gem](https://github.com/wnadeau/wunderground)
 * Notable
   - [Interactor gem](https://github.com/collectiveidea/interactor)
+
 
 TODO:
 * Instantiate a different scheduled chatbot instance to allow MaraBotMaster to speak with MaraBot
@@ -67,7 +69,7 @@ TODO:
 * Knock down all documentation
 * Set up production error monitoring
 * Extend bot further for practical use
-* Much later on - build out bot to handle open world users, i.e. add step to interactor to manage user and accept them, and get their chat id. 
+* Much later on - build out bot to handle open world users, i.e. add step to interactor to manage user and accept them, and get their chat id.
 
 Misc
 ----------
