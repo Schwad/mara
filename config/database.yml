@@ -52,6 +52,8 @@ test:
 
 production:
   adapter: postgresql
-  database: my_database_production
+  database: mara_production
   pool: 5
-  timeout: 5000
+  username: mara
+  password:
+  template: template0
