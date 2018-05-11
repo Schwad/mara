@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, password_length: 12..128
 
   validates :friendly_name, presence: true
+  has_many :data_points
 end

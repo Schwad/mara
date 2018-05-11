@@ -51,11 +51,7 @@ test:
   template: template0
 
 production:
-  adapter:  postgresql
-  host:     localhost
-  encoding: unicode
-  database: mara_production
-  pool:     5
-  username: mara
-  password:
-  template: template0
+  adapter: postgresql
+  database: my_database_production
+  pool: 5
+  timeout: 5000
