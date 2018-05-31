@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>DeviseCreateUsers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="DeviseCreateUsers">
+
+  
+
+    <meta name="keywords" content="DeviseCreateUsers class">
+  
+    <meta name="keywords" content="change">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            DeviseCreateUsers
+            
+                <span class="parent">&lt;
+                    
+                    ActiveRecord::Migration[5.2]
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/db/migrate/20180427161305_devise_create_users_rb.html">db/migrate/20180427161305_devise_create_users.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-change">change</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-change">
+            
+              <b>change</b>()
+            
+            <a href="../classes/DeviseCreateUsers.html#method-i-change" name="method-i-change" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-change_source')" id="l_method-i-change_source">show</a>
+                
+              </p>
+              <div id="method-i-change_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File db/migrate/20180427161305_devise_create_users.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change</span>
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:users</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment">## Database authenticatable</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:email</span>,              <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:encrypted_password</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>
+
+    <span class="ruby-comment">## Recoverable</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span>   <span class="ruby-value">:reset_password_token</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:reset_password_sent_at</span>
+
+    <span class="ruby-comment">## Rememberable</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:remember_created_at</span>
+
+    <span class="ruby-comment">## Trackable</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span>  <span class="ruby-value">:sign_in_count</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:current_sign_in_at</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:last_sign_in_at</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">inet</span>     <span class="ruby-value">:current_sign_in_ip</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">inet</span>     <span class="ruby-value">:last_sign_in_ip</span>
+
+    <span class="ruby-comment">## Confirmable</span>
+    <span class="ruby-comment"># t.string   :confirmation_token</span>
+    <span class="ruby-comment"># t.datetime :confirmed_at</span>
+    <span class="ruby-comment"># t.datetime :confirmation_sent_at</span>
+    <span class="ruby-comment"># t.string   :unconfirmed_email # Only if using reconfirmable</span>
+
+    <span class="ruby-comment">## Lockable</span>
+    <span class="ruby-comment"># t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts</span>
+    <span class="ruby-comment"># t.string   :unlock_token # Only if unlock strategy is :email or :both</span>
+    <span class="ruby-comment"># t.datetime :locked_at</span>
+
+
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">add_index</span> <span class="ruby-value">:users</span>, <span class="ruby-value">:email</span>,                <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">add_index</span> <span class="ruby-value">:users</span>, <span class="ruby-value">:reset_password_token</span>, <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-comment"># add_index :users, :confirmation_token,   unique: true</span>
+  <span class="ruby-comment"># add_index :users, :unlock_token,         unique: true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

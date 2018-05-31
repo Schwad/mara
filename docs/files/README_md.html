@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>README.md</title>
-    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
@@ -19,12 +21,8 @@
             README.md
         </h1>
         <ul class="files">
-            
-            <li>
-                README.md
-                
-            </li>
-            <li>Last modified: 2018-05-11 19:10:15 +0100</li>
+            <li>README.md</li>
+            <li>Last modified: 2018-05-31 21:33:14 +0100</li>
         </ul>
     </div>
 
@@ -33,7 +31,7 @@
   
     <div class="description">
       
-<h1 id="label-Mara+rdoc-image-3Ahttps-3A-2F-2Fbadges.gitter.im-2FgitterHQ-2Fgitter.png">Mara <a href="https://gitter.im/mara-bot/"><img src="https://badges.gitter.im/gitterHQ/gitter.png"></a></h1>
+<h1 id="label-Mara+rdoc-image-3Ahttps-3A-2F-2Fbadges.gitter.im-2FgitterHQ-2Fgitter.png"><a href="../classes/Mara.html">Mara</a> <a href="https://gitter.im/mara-bot/"><img src="https://badges.gitter.im/gitterHQ/gitter.png"></a></h1>
 
 <p><a href="https://codeclimate.com/github/Schwad/mara/maintainability"><img
 src="https://api.codeclimate.com/v1/badges/a6cec7ae312fd71a8383/maintainability"></a>
@@ -72,14 +70,16 @@ the wonderful @eljojo.</p>
 to change in the future.</p>
 
 <p>The Bot is run as a background job with Sidekiq/Redis, and is initialized
-in the Procfile like so:</p>
+in the <a href="Procfile.html">Procfile</a> like so:</p>
 
 <p><code>web: rake mara:start &amp;&amp; bundle exec rails server -p
 $PORT</code></p>
 
 <p>To work with <a href="../classes/MaraBot.html">MaraBot</a> in development,
 you fire it up with <code>rake mara:reset</code> (kills any active bots and
-starts a new one).</p>
+starts a new one). If you are going from scratch, this will likely involve
+booting your <code>redis-server</code>, then <code>sidekiq</code>, then
+<code>rake mara:reset</code>.</p>
 
 <p>This application uses the Interactor design pattern (<a
 href="https://github.com/collectiveidea/interactor">implemented with the
@@ -143,7 +143,7 @@ interactor to manage user and accept them, and get their chat id.</p>
 
 <h2 id="label-Contributing">Contributing</h2>
 
-<p>See CONTRIBUTORS.md</p>
+<p>See <a href="CONTRIBUTORS_md.html">CONTRIBUTORS.md</a></p>
 
 <h2 id="label-Credits">Credits</h2>
 

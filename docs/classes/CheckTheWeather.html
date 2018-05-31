@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <title>CheckTheWeather</title>
-    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
@@ -34,7 +36,7 @@
             
                 <span class="parent">&lt;
                     
-                    Object
+                    <a href="Object.html">Object</a>
                     
                 </span>
             
@@ -148,10 +150,11 @@ if API fails.</p>
                 
               </p>
               <div id="method-i-call_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/interactors/check_the_weather.rb, line 8</span>
+                <pre><span class="ruby-comment"># File app/interactors/check_the_weather.rb, line 9</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">call</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;Check the weather&#39;</span>
   <span class="ruby-identifier">context</span>.<span class="ruby-identifier">response</span> = <span class="ruby-string">&#39;Check the weather&#39;</span>
+  <span class="ruby-comment"># pull weather here</span>
   <span class="ruby-identifier">w_api</span> = <span class="ruby-constant">Wunderground</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;WUNDERGROUND_API_KEY&#39;</span>]).<span class="ruby-identifier">conditions_for</span>(<span class="ruby-string">&quot;Lostwithiel, UK&quot;</span>)[<span class="ruby-string">&#39;current_observation&#39;</span>]
   <span class="ruby-identifier">context</span>.<span class="ruby-identifier">pressure</span> = <span class="ruby-identifier">w_api</span>[<span class="ruby-string">&#39;pressure_mb&#39;</span>].<span class="ruby-identifier">to_f</span>
   <span class="ruby-identifier">context</span>.<span class="ruby-identifier">temperature</span> = <span class="ruby-identifier">w_api</span>[<span class="ruby-string">&#39;temp_c&#39;</span>]
