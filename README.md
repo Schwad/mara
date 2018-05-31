@@ -38,7 +38,7 @@ This application uses the Interactor design pattern ([implemented with the inter
 Documentation and Support
 -------------------------
 
-Full documentation for this application is [available here](https://schwad.github.io/mara/).
+Full documentation for this application is [available here](https://schwad.github.io/mara/). In development, update the documentation files with `rake rdoc`.
 
 ## Key technologies:
 
