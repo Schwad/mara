@@ -5,6 +5,6 @@
 #
 class DataPoint < ApplicationRecord
   belongs_to :user
-  store :weather_data, accessors: [ :pressure, :temperature ], coder: JSON
+  store :weather_data, accessors: %i[pressure temperature], coder: JSON
   serialize :full_weather_record, Hash
 end
