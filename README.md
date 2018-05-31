@@ -31,7 +31,7 @@ The Bot is run as a background job with Sidekiq/Redis, and is initialized in the
 
 `web: rake mara:start && bundle exec rails server -p $PORT`
 
-To work with MaraBot in development, you fire it up with `rake mara:reset` (kills any active bots and starts a new one).
+To work with MaraBot in development, you fire it up with `rake mara:reset` (kills any active bots and starts a new one). If you are going from scratch, this will likely involve booting your `redis-server`, then `sidekiq`, then `rake mara:reset`.
 
 This application uses the Interactor design pattern ([implemented with the interactor gem](https://github.com/collectiveidea/interactor)) to process bot interactions.
 

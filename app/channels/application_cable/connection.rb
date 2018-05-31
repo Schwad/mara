@@ -1,4 +1,6 @@
-module ApplicationCable
-  class Connection < ActionCable::Connection::Base
+# frozen_string_literal: true
+
+module ApplicationCable #:nodoc:
+  class Connection < ActionCable::Connection::Base #:nodoc:
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ##
 # The final interactor in the process if all has passed. Records the data point and corresponding information into the official logs.
 #

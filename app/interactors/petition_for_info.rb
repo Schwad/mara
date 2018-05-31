@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+##
+# Interactor that petitions users for pain reading information.
 class PetitionForInfo
   include Interactor
 

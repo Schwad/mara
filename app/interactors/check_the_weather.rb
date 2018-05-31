@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ##
 # Pulls in weather information from the WeatherUnderground integration. Fails if API fails.
 #

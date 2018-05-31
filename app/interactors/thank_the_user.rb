@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ##
 # Issues a response to the user at the end of the process.
 #
