@@ -1,7 +1,6 @@
 ##
 # Interactor object that runs at the front of the `ManageMessage` interactor, ensuring that all handled messages are from verified users. Rate limits if not.
 #
-
 class VerifyUser
   include Interactor
 
