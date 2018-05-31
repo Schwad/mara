@@ -60,17 +60,6 @@ Full documentation for this application is [available here](https://schwad.githu
 * Notable
   - [Interactor gem](https://github.com/collectiveidea/interactor)
 
-
-TODO:
-* Instantiate a different scheduled chatbot instance to allow MaraBotMaster to speak with MaraBot
-* Allow MaraBot to be supplied a username and message a user directly from there. (Maybe I can manually reset the message's user.)
-* Come up with effective marabot tests
-* Fill out interactor specs
-* Knock down all documentation
-* Set up production error monitoring
-* Extend bot further for practical use
-* Much later on - build out bot to handle open world users, i.e. add step to interactor to manage user and accept them, and get their chat id.
-
 Misc
 ----------
 
