@@ -166,7 +166,6 @@ Searchdoc.Panel.prototype = $.extend({}, Searchdoc.Navigation, new function() {
         });
 
         this.$result.click(function(e) {
-            e.preventDefault();
             _this.$current.removeClass('current');
             _this.$current = $(e.target).closest('li').addClass('current');
             _this.select();
@@ -238,17 +237,17 @@ Searchdoc.Panel.prototype = $.extend({}, Searchdoc.Navigation, new function() {
 
     function renderItem(result) {
         var li = document.createElement('li'),
-        html = '',
-        badge = result.badge;
-        html += '<a href="../' + result.path + '">' + hlt(result.title);
+            html = '',
+            badge = result.badge;
+        html += '<h1>' + hlt(result.title);
         if (result.params) html += '<i>' + result.params + '</i>';
-        html += '</a>';
+        html += '</h1>';
         html += '<p>';
         if (typeof badge != 'undefined') {
             html += '<span class="badge badge_' + (badge % 6 + 1) + '">' + stripHTML(this.data.badges[badge] || 'unknown') + '</span>';
         }
         html += hlt(result.namespace) + '</p>';
-        if (result.snippet) html += '<p class="snippet">' + stripHTML(result.snippet.replace(/^<p>/, '')) + '</p>';
+        if (result.snippet) html += '<p class="snippet">' + stripHTML(result.snippet) + '</p>';
         li.innerHTML = html;
         jQuery.data(li, 'path', result.path);
         return li;
@@ -305,7 +304,6 @@ Searchdoc.Tree.prototype = $.extend({}, Searchdoc.Navigation, new function() {
         }
         var _this = this;
         this.$list.click(function(e) {
-            e.preventDefault();
             var $target = $(e.target),
                 $li = $target.closest('li');
             if ($target.hasClass('icon')) {
@@ -420,23 +418,22 @@ Searchdoc.Tree.prototype = $.extend({}, Searchdoc.Navigation, new function() {
     function renderItem(item, level) {
         var li = document.createElement('li'),
             cnt = document.createElement('div'),
-            a = document.createElement('a'),
+            h1 = document.createElement('h1'),
             p = document.createElement('p'),
             icon, i;
 
-        a.href = '../' + item[1];
         li.appendChild(cnt);
         li.style.paddingLeft = getOffset(level);
         cnt.className = 'content';
         if (!item[1]) li.className = 'empty ';
-        cnt.appendChild(a);
+        cnt.appendChild(h1);
         // cnt.appendChild(p);
-        a.appendChild(document.createTextNode(item[0]));
+        h1.appendChild(document.createTextNode(item[0]));
         // p.appendChild(document.createTextNode(item[4]));
         if (item[2]) {
             i = document.createElement('i');
             i.appendChild(document.createTextNode(item[2]));
-            a.appendChild(i);
+            h1.appendChild(i);
         }
         if (item[3].length > 0) {
             icon = document.createElement('div');
