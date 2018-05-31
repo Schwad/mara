@@ -8,6 +8,7 @@ class CheckTheWeather
   def call
     puts 'Check the weather'
     context.response = 'Check the weather'
+    # pull weather here
     w_api = Wunderground.new(ENV['WUNDERGROUND_API_KEY']).conditions_for("Lostwithiel, UK")['current_observation']
     context.pressure = w_api['pressure_mb'].to_f
     context.temperature = w_api['temp_c']

@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 RSpec.describe RecordDataPoint, type: :interactor do
-  subject(:context) { RecordDataPoint.call }
+  let(:user) { create(:user) }
+  subject(:context) { RecordDataPoint.call(user: user) }
   describe '.call' do
     it 'succeeds' do
       expect(context.response.downcase).to eq('record data point')

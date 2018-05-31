@@ -36,7 +36,7 @@ class MaraBot
   #
   # The pings and receipt performance are not 'linked' in a conversation and are unrelated.
 
-  def ping_user(user)
+  def ping_user user
     channel = TelegramBot::Channel.new(username: user.friendly_name, id: user.chat_id)
     out_message = TelegramBot::OutMessage.new(chat: channel, text: PetitionForInfo.call(user: user).response)
     @bot.send_message(out_message)

@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/merlos/telegram_bot
-  revision: fc37c4c0777031d6375f04580177884d1e4c8347
+  remote: https://github.com/schwad/telegram_bot
+  revision: 129ca3c85907e62329598f4218b6a9290bf24e70
   specs:
     telegram_bot (0.0.8)
       excon (>= 0.30.0)
