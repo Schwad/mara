@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+##
+# The main user object, although built up under a typical 'Devise-style' framework, this will primarily be used to validate and interact with the user in the Telegram interface. It will be prepared out-of-the-box for any web-based 'signing up' or profile management that may be needed in the future.
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
