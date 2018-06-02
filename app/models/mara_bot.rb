@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 ##
 # The primary interfact with which the application interacts with the telegram api via the telegram_bot gem.
 #
