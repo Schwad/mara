@@ -1,5 +1,6 @@
 require 'simplecov'
 require 'coveralls'
+require 'webmock/rspec'
 
 SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do

@@ -9,15 +9,14 @@ class RecordDataPoint
 
   def call
     datapoint = DataPoint.new
-    datapoint.pressure = context.pressure
-    datapoint.temperature = context.temperature
+    datapoint.pressure = context.weather.pressure_mb
+    datapoint.temperature = context.weather.temp_c
     datapoint.full_weather_record = context.full_weather_record
     datapoint.pain_level = context.incoming_message.to_f
     datapoint.user = context.user
     if datapoint.save && context.user.save
       context.response = 'Record Data Point'
     else
-      binding.pry
       context.fail!
     end
     puts 'Record Data Point'

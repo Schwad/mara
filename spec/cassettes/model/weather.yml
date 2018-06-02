@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.wunderground.com/api/79d813a538fd80b8/conditions/q/Lostwithiel,%20UK.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=UTF-8
+      Last-Modified:
+      - Sat, 02 Jun 2018 19:49:42 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Cacheable:
+      - 'YES'
+      X-Creationtime:
+      - '0.064'
+      X-Varnish:
+      - '2341006777'
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Sat, 02 Jun 2018 19:49:42 GMT
+      Cache-Control:
+      - max-age=0, no-cache
+      Pragma:
+      - no-cache
+      Date:
+      - Sat, 02 Jun 2018 19:49:42 GMT
+      Content-Length:
+      - '2543'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "\n{\n  \"response\": {\n  \"version\":\"0.1\",\n  \"termsofService\":\"http://www.wunderground.com/weather/api/d/terms.html\",\n
+        \ \"features\": {\n  \"conditions\": 1\n  }\n\t}\n  ,\t\"current_observation\":
+        {\n\t\t\"image\": {\n\t\t\"url\":\"http://icons.wxug.com/graphics/wu2/logo_130x80.png\",\n\t\t\"title\":\"Weather
+        Underground\",\n\t\t\"link\":\"http://www.wunderground.com\"\n\t\t},\n\t\t\"display_location\":
+        {\n\t\t\"full\":\"Lostwithiel, United Kingdom\",\n\t\t\"city\":\"Lostwithiel\",\n\t\t\"state\":\"CON\",\n\t\t\"state_name\":\"United
+        Kingdom\",\n\t\t\"country\":\"UK\",\n\t\t\"country_iso3166\":\"GB\",\n\t\t\"zip\":\"00000\",\n\t\t\"magic\":\"34\",\n\t\t\"wmo\":\"03823\",\n\t\t\"latitude\":\"50.40999985\",\n\t\t\"longitude\":\"-4.67000008\",\n\t\t\"elevation\":\"68.9\"\n\t\t},\n\t\t\"observation_location\":
+        {\n\t\t\"full\":\"Cardinham, \",\n\t\t\"city\":\"Cardinham\",\n\t\t\"state\":\"\",\n\t\t\"country\":\"GB\",\n\t\t\"country_iso3166\":\"GB\",\n\t\t\"latitude\":\"50.39\",\n\t\t\"longitude\":\"-4.73\",\n\t\t\"elevation\":\"500
+        ft\"\n\t\t},\n\t\t\"estimated\": {\n\t\t},\n\t\t\"station_id\":\"ILANLIVE2\",\n\t\t\"observation_time\":\"Last
+        Updated on June 2, 8:49 PM BST\",\n\t\t\"observation_time_rfc822\":\"Sat,
+        02 Jun 2018 20:49:37 +0100\",\n\t\t\"observation_epoch\":\"1527968977\",\n\t\t\"local_time_rfc822\":\"Sat,
+        02 Jun 2018 20:49:42 +0100\",\n\t\t\"local_epoch\":\"1527968982\",\n\t\t\"local_tz_short\":\"BST\",\n\t\t\"local_tz_long\":\"Europe/London\",\n\t\t\"local_tz_offset\":\"+0100\",\n\t\t\"weather\":\"Partly
+        Cloudy\",\n\t\t\"temperature_string\":\"58.3 F (14.6 C)\",\n\t\t\"temp_f\":58.3,\n\t\t\"temp_c\":14.6,\n\t\t\"relative_humidity\":\"92%\",\n\t\t\"wind_string\":\"Calm\",\n\t\t\"wind_dir\":\"SSE\",\n\t\t\"wind_degrees\":147,\n\t\t\"wind_mph\":0,\n\t\t\"wind_gust_mph\":0,\n\t\t\"wind_kph\":0,\n\t\t\"wind_gust_kph\":0,\n\t\t\"pressure_mb\":\"1018\",\n\t\t\"pressure_in\":\"30.08\",\n\t\t\"pressure_trend\":\"-\",\n\t\t\"dewpoint_string\":\"56
+        F (13 C)\",\n\t\t\"dewpoint_f\":56,\n\t\t\"dewpoint_c\":13,\n\t\t\"heat_index_string\":\"NA\",\n\t\t\"heat_index_f\":\"NA\",\n\t\t\"heat_index_c\":\"NA\",\n\t\t\"windchill_string\":\"NA\",\n\t\t\"windchill_f\":\"NA\",\n\t\t\"windchill_c\":\"NA\",\n\t\t\"feelslike_string\":\"58.3
+        F (14.6 C)\",\n\t\t\"feelslike_f\":\"58.3\",\n\t\t\"feelslike_c\":\"14.6\",\n\t\t\"visibility_mi\":\"18.0\",\n\t\t\"visibility_km\":\"29.0\",\n\t\t\"solarradiation\":\"11\",\n\t\t\"UV\":\"0.0\",\"precip_1hr_string\":\"0.00
+        in ( 0 mm)\",\n\t\t\"precip_1hr_in\":\"0.00\",\n\t\t\"precip_1hr_metric\":\"
+        0\",\n\t\t\"precip_today_string\":\" in ( mm)\",\n\t\t\"precip_today_in\":\"\",\n\t\t\"precip_today_metric\":\"--\",\n\t\t\"icon\":\"partlycloudy\",\n\t\t\"icon_url\":\"http://icons.wxug.com/i/c/k/partlycloudy.gif\",\n\t\t\"forecast_url\":\"http://www.wunderground.com/global/stations/03823.html\",\n\t\t\"history_url\":\"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=ILANLIVE2\",\n\t\t\"ob_url\":\"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=50.391533,-4.728093\",\n\t\t\"nowcast\":\"\"\n\t}\n}\n"
+    http_version: 
+  recorded_at: Sat, 02 Jun 2018 19:49:42 GMT
+recorded_with: VCR 4.0.0

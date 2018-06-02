@@ -116,6 +116,8 @@ GEM
       simplecov (>= 0.7)
       term-ansicolor
       thor
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     crass (1.0.4)
     database_cleaner (1.7.0)
     descendants_tracker (0.0.4)
@@ -152,6 +154,7 @@ GEM
       terminal-table
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hashdiff (0.3.7)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httparty (0.16.2)
@@ -315,6 +318,7 @@ GEM
       sexp_processor (~> 4.9)
     rubyzip (1.2.1)
     rugged (0.27.0)
+    safe_yaml (1.0.4)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -383,6 +387,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.5)
     unicode-display_width (1.3.2)
+    vcr (4.0.0)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -395,6 +400,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webmock (3.4.1)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -457,7 +466,10 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
+  vcr
+  virtus
   web-console (>= 3.3.0)
+  webmock
   wunderground
 
 RUBY VERSION
