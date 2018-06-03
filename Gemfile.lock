@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/schwad/telegram_bot
-  revision: 129ca3c85907e62329598f4218b6a9290bf24e70
+  revision: 186737ec66a632d066abbdc61b076b4da43dfe6e
   specs:
     telegram_bot (0.0.8)
       excon (>= 0.30.0)
@@ -149,6 +149,7 @@ GEM
       colorize (~> 0.7)
       ruby_parser (~> 3.11.0)
     ffi (1.9.23)
+    geocoder (1.4.9)
     gitlab (4.3.0)
       httparty
       terminal-table
@@ -433,6 +434,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
+  geocoder
   interactor-rails (~> 2.0)
   jbuilder (~> 2.5)
   jquery-rails
