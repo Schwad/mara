@@ -149,7 +149,6 @@ GEM
       colorize (~> 0.7)
       ruby_parser (~> 3.11.0)
     ffi (1.9.23)
-    geocoder (1.4.9)
     gitlab (4.3.0)
       httparty
       terminal-table
@@ -434,7 +433,6 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
-  geocoder
   interactor-rails (~> 2.0)
   jbuilder (~> 2.5)
   jquery-rails
