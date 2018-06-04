@@ -207,7 +207,7 @@ this object and not directly through the Telegram_Bot.</p>
                 
               </p>
               <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 23</span>
+                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
   <span class="ruby-ivar">@bot</span> = <span class="ruby-constant">TelegramBot</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">token</span><span class="ruby-operator">:</span> <span class="ruby-constant">MARA_BOT_KEY</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -249,7 +249,7 @@ process/worker in order to receive updates. This is done via the Procfile.</p>
                 
               </p>
               <div id="method-i-perform_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 30</span>
+                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">perform</span>
   <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">get_updates</span>(<span class="ruby-identifier">fail_silently</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">message</span><span class="ruby-operator">|</span>
     <span class="ruby-constant">ManageMessage</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">bot</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@bot</span>, <span class="ruby-identifier">message</span><span class="ruby-operator">:</span> <span class="ruby-identifier">message</span>)
@@ -292,7 +292,7 @@ conversation and are unrelated.</p>
                 
               </p>
               <div id="method-i-ping_user_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 41</span>
+                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ping_user</span> <span class="ruby-identifier">user</span>
   <span class="ruby-identifier">channel</span> = <span class="ruby-constant">TelegramBot</span><span class="ruby-operator">::</span><span class="ruby-constant">Channel</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">username</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">friendly_name</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">chat_id</span>)
   <span class="ruby-identifier">out_message</span> = <span class="ruby-constant">TelegramBot</span><span class="ruby-operator">::</span><span class="ruby-constant">OutMessage</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">chat</span><span class="ruby-operator">:</span> <span class="ruby-identifier">channel</span>, <span class="ruby-identifier">text</span><span class="ruby-operator">:</span> <span class="ruby-constant">PetitionForInfo</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">user</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>).<span class="ruby-identifier">response</span>)
@@ -333,7 +333,7 @@ user object and message.</p>
                 
               </p>
               <div id="method-i-send_user_custom_message_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 51</span>
+                <pre><span class="ruby-comment"># File app/models/mara_bot.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">send_user_custom_message</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">message</span>)
   <span class="ruby-identifier">channel</span> = <span class="ruby-constant">TelegramBot</span><span class="ruby-operator">::</span><span class="ruby-constant">Channel</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">username</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">friendly_name</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">chat_id</span>)
   <span class="ruby-identifier">out_message</span> = <span class="ruby-constant">TelegramBot</span><span class="ruby-operator">::</span><span class="ruby-constant">OutMessage</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">chat</span><span class="ruby-operator">:</span> <span class="ruby-identifier">channel</span>, <span class="ruby-identifier">text</span><span class="ruby-operator">:</span> <span class="ruby-identifier">message</span>)

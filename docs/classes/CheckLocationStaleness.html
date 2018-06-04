@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CheckLocationStaleness</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="CheckLocationStaleness">
+
+  
+    
+    <meta name="description" content="If the user&#39;s location data has gotten stale, reject if fully stale or warn if somewhat stale.">
+    <meta property="og:description" content="If the user&#39;s location data has gotten stale, reject if fully stale or warn if somewhat stale.">
+  
+
+    <meta name="keywords" content="CheckLocationStaleness class">
+  
+    <meta name="keywords" content="call">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            CheckLocationStaleness
+            
+                <span class="parent">&lt;
+                    
+                    Object
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/interactors/check_location_staleness_rb.html">app/interactors/check_location_staleness.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>If the user&#39;s location data has gotten stale, reject if fully stale or
+warn if somewhat stale.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-call">call</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            Interactor
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-call">
+            
+              <b>call</b>()
+            
+            <a href="../classes/CheckLocationStaleness.html#method-i-call" name="method-i-call" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-call_source')" id="l_method-i-call_source">show</a>
+                
+              </p>
+              <div id="method-i-call_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/interactors/check_location_staleness.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">call</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;Update user location&#39;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">location_updated_at</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;EMPTY MESSAGE FAIL&quot;</span>
+    <span class="ruby-identifier">context</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">reply</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">reply</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">text</span> = <span class="ruby-node">&quot;hello #{context.message.from.username}, we have no location data for you! We cannot record this data unless you &#39;share live location&#39; with us, available if you click the attachment &#39;paperclip&#39; in the bottom left-hand corner. Or if you want to send a one-off location sample to us, you can do that there. In general we will warn you after 10 hours, and will reject data after 16. it will probably be easiest long term to &#39;share live location&#39; in the morning, and you won&#39;t get these messages any more then.&quot;</span>
+      <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">send_with</span>(<span class="ruby-identifier">context</span>.<span class="ruby-identifier">bot</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">context</span>.<span class="ruby-identifier">fail!</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">location_updated_at</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">16</span>.<span class="ruby-identifier">hours</span>.<span class="ruby-identifier">ago</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;STALE MESSAGE FAIL&#39;</span>
+    <span class="ruby-identifier">context</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">reply</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">reply</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">text</span> = <span class="ruby-node">&quot;hello #{context.message.from.username}, unfortunately your location data has gone out of date! We cannot record this data unless you &#39;share live location&#39; with us, available if you click the attachment &#39;paperclip&#39; in the bottom left-hand corner. Or if you want to send a one-off location sample to us, you can do that there. In general we will warn you after 10 hours, and will reject data after 16. it will probably be easiest long term to &#39;share live location&#39; in the morning, and you won&#39;t get these messages any more then.&quot;</span>
+      <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">send_with</span>(<span class="ruby-identifier">context</span>.<span class="ruby-identifier">bot</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">context</span>.<span class="ruby-identifier">fail!</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">location_updated_at</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">10</span>.<span class="ruby-identifier">hours</span>.<span class="ruby-identifier">ago</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;STALE MESSAGE WARN&#39;</span>
+    <span class="ruby-identifier">context</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">reply</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">reply</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">text</span> = <span class="ruby-node">&quot;hello #{context.message.from.username}, we will update your data here, but your location data is on the verge of becoming stale. When you get an opportunity please .&quot;</span>
+      <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">send_with</span>(<span class="ruby-identifier">context</span>.<span class="ruby-identifier">bot</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

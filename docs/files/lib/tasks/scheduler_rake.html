@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>thank_the_user.rb</title>
+    <title>scheduler.rake</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
@@ -16,15 +16,15 @@
     <div class="banner">
         
         <h1>
-            thank_the_user.rb
+            scheduler.rake
         </h1>
         <ul class="files">
             
             <li>
-                app/interactors/thank_the_user.rb
+                lib/tasks/scheduler.rake
                 
             </li>
-            <li>Last modified: 2018-06-03 20:48:05 +0100</li>
+            <li>Last modified: 2018-06-03 21:48:11 +0100</li>
         </ul>
     </div>
 
@@ -33,7 +33,25 @@
   
     <div class="description">
       
-<p>Issues a response to the user at the end of the process.</p>
+<p>namespace :scheduled do</p>
+
+<pre><code>task ping_users: :environment do
+  # Currently randomly samples every four hours during daylight hours.
+  if (1..4).to_a.sample == 10 &amp;&amp; Time.now.hour &gt; 8 &amp;&amp; Time.now.hour &lt; 22
+    User.all.each do |user|
+      MaraBot.new.ping_user user
+    end
+  end
+end
+
+task forced_ping_users: :environment do
+  User.all.each do |user|
+    MaraBot.new.ping_user user
+  end
+end
+</code></pre>
+
+<p>end</p>
 
     </div>
   
@@ -46,17 +64,6 @@
   
 
 
-  
-    <!-- Namespace -->
-    <div class="sectiontitle">Namespace</div>
-    <ul>
-      
-        <li>
-          <span class="type">CLASS</span>
-          <a href="../../../classes/ThankTheUser.html">ThankTheUser</a>
-        </li>
-      
-    </ul>
   
 
 

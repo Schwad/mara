@@ -151,15 +151,14 @@ point and corresponding information into the official logs.</p>
                 <pre><span class="ruby-comment"># File app/interactors/record_data_point.rb, line 9</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">call</span>
   <span class="ruby-identifier">datapoint</span> = <span class="ruby-constant">DataPoint</span>.<span class="ruby-identifier">new</span>
-  <span class="ruby-identifier">datapoint</span>.<span class="ruby-identifier">pressure</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">pressure</span>
-  <span class="ruby-identifier">datapoint</span>.<span class="ruby-identifier">temperature</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">temperature</span>
+  <span class="ruby-identifier">datapoint</span>.<span class="ruby-identifier">pressure</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">weather</span>.<span class="ruby-identifier">pressure_mb</span>
+  <span class="ruby-identifier">datapoint</span>.<span class="ruby-identifier">temperature</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">weather</span>.<span class="ruby-identifier">temp_c</span>
   <span class="ruby-identifier">datapoint</span>.<span class="ruby-identifier">full_weather_record</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">full_weather_record</span>
   <span class="ruby-identifier">datapoint</span>.<span class="ruby-identifier">pain_level</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">incoming_message</span>.<span class="ruby-identifier">to_f</span>
   <span class="ruby-identifier">datapoint</span>.<span class="ruby-identifier">user</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">user</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">datapoint</span>.<span class="ruby-identifier">save</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">save</span>
     <span class="ruby-identifier">context</span>.<span class="ruby-identifier">response</span> = <span class="ruby-string">&#39;Record Data Point&#39;</span>
   <span class="ruby-keyword">else</span>
-    <span class="ruby-identifier">binding</span>.<span class="ruby-identifier">pry</span>
     <span class="ruby-identifier">context</span>.<span class="ruby-identifier">fail!</span>
   <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;Record Data Point&#39;</span>

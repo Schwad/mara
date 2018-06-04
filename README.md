@@ -35,6 +35,10 @@ To work with MaraBot in development, you fire it up with `rake mara:reset` (kill
 
 This application uses the Interactor design pattern ([implemented with the interactor gem](https://github.com/collectiveidea/interactor)) to process bot interactions.
 
+For further background, here is an unofficial talk about this project given at [Isle of Ruby](https://2018.isleofruby.org/):
+
+[![VIDEO](https://i.imgur.com/JKcG9qZ.png)](https://www.youtube.com/watch?v=Qf0S29bJbPg)
+
 Documentation and Support
 -------------------------
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CheckTheWeather</title>
+    <title>InspectMessageValidity</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
@@ -11,15 +11,15 @@
 <script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
 
 
-    <meta property="og:title" value="CheckTheWeather">
+    <meta property="og:title" value="InspectMessageValidity">
 
   
     
-    <meta name="description" content="Pulls in weather information from the WeatherUnderground integration. Fails if API fails.">
-    <meta property="og:description" content="Pulls in weather information from the WeatherUnderground integration. Fails if API fails.">
+    <meta name="description" content="Ensures that the submitted message is valid.">
+    <meta property="og:description" content="Ensures that the submitted message is valid.">
   
 
-    <meta name="keywords" content="CheckTheWeather class">
+    <meta name="keywords" content="InspectMessageValidity class">
   
     <meta name="keywords" content="call">
   
@@ -30,7 +30,7 @@
         
         <h1>
             <span class="type">Class</span>
-            CheckTheWeather
+            InspectMessageValidity
             
                 <span class="parent">&lt;
                     
@@ -41,7 +41,7 @@
         </h1>
         <ul class="files">
             
-            <li><a href="../files/app/interactors/check_the_weather_rb.html">app/interactors/check_the_weather.rb</a></li>
+            <li><a href="../files/app/interactors/inspect_message_validity_rb.html">app/interactors/inspect_message_validity.rb</a></li>
             
         </ul>
     </div>
@@ -50,8 +50,7 @@
   
     <div class="description">
       
-<p>Pulls in weather information from the WeatherUnderground integration. Fails
-if API fails.</p>
+<p>Ensures that the submitted message is valid.</p>
 
     </div>
   
@@ -125,7 +124,7 @@ if API fails.</p>
             
               <b>call</b>()
             
-            <a href="../classes/CheckTheWeather.html#method-i-call" name="method-i-call" class="permalink">Link</a>
+            <a href="../classes/InspectMessageValidity.html#method-i-call" name="method-i-call" class="permalink">Link</a>
           </div>
 
           
@@ -148,20 +147,16 @@ if API fails.</p>
                 
               </p>
               <div id="method-i-call_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/interactors/check_the_weather.rb, line 8</span>
+                <pre><span class="ruby-comment"># File app/interactors/inspect_message_validity.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">call</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;Check the weather&#39;</span>
-  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">response</span> = <span class="ruby-string">&#39;Check the weather&#39;</span>
-  <span class="ruby-identifier">w_api</span> = <span class="ruby-constant">Wunderground</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;WUNDERGROUND_API_KEY&#39;</span>]).<span class="ruby-identifier">conditions_for</span>(<span class="ruby-identifier">context</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">location</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&#39; &#39;</span>))[<span class="ruby-string">&#39;current_observation&#39;</span>]
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">w_api</span>.<span class="ruby-identifier">blank?</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;Inspect message validity&#39;</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">context</span>.<span class="ruby-identifier">incoming_message</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">==</span> <span class="ruby-value">0.0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">incoming_message</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&#39;0&#39;</span> ) <span class="ruby-operator">||</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">incoming_message</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">10.0</span>
     <span class="ruby-identifier">context</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">reply</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">reply</span><span class="ruby-operator">|</span>
-      <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">text</span> = <span class="ruby-node">&quot;hello again #{context.message.from.username}! For some reason our API is not able to get weather info from your location.\n\n If this keeps happening let Nick know and try to make a note of where you are. He can be reached at nicholas.schwaderer@gmail.com&quot;</span>
+      <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">text</span> = <span class="ruby-node">&quot;hello #{context.message.from.username}, we are afraid that &#39;#{context.incoming_message}&#39; Is not a valid reply. Unless you are sending a valid command from the command list, please respond only with numbers from 0-10 so that they may be recorded. If something unexpected is happening here, get in touch with the maintainer at nicholas.schwaderer@gmail.com or on Telegram at @schwadererer.&quot;</span>
       <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">send_with</span>(<span class="ruby-identifier">context</span>.<span class="ruby-identifier">bot</span>)
     <span class="ruby-keyword">end</span>
     <span class="ruby-identifier">context</span>.<span class="ruby-identifier">fail!</span>
   <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">weather</span> = <span class="ruby-constant">Weather</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">w_api</span>)
-  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">full_weather_record</span> = <span class="ruby-identifier">w_api</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
