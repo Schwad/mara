@@ -5,9 +5,6 @@ cache: bundler
 rvm:
   - 2.4.4
 
-env:
-  - WUNDERGROUND_API_KEY=dummy_key
-  
 services:
   - postgresql
 
@@ -48,3 +45,7 @@ jobs:
     #     - var="$(bundle exec pronto run -r fasterer -c origin/master)"
     #     - echo $var
     #     - if [[ -z $var ]]; then exit 0; else exit 1; fi
+
+env:
+  matrix:
+    secure: KS/V8JGogmY2uk+veO1+agJnpBSvKSQQAieMda7wTD2GhVLEm44IvPat1JLFx4JCnxHRd+gWkbeP00mp7qsu5wy+omrHuRaSqqdfOaBlwPDf8ZYAI6AYwkz8xndOJo77pFLpq6WpxZ3fIcHqGPCMpaI4KdT3UljZ2yZQ/9gGs6EZuRgawgHkasnhqugfHG0WIBOtt14qqSoWsKd+4CHoy5nsG0bvHfYA1PzesfRW1tGWlsKd3z64MVOtJZiv+esk+hN9b8jeG4B5rJZerrUBm105qr0kiV53O9bQJA7eK6CE8eyR/O6Xwip8MCBkFX8lNfdRpSQAzCdYp9txrmWMIdxlzFXzkXDbnVqG8SDpu9LKFfEDPgYwr/sV7/BL5NfmKuAgBzSg6zPMLp0VPKqoSzEe5azaY9sgPkgMeWKt7oggJmU3RHWKtS8LkfOLczlUI0FHOZ5dyxcJjUj2R22Qg8HCBojyCcQjvraw5i8GdGrsStVFKAz2rsZ3Vu76WSTYqDXI9MnMIEBetXvvXjJMK4K/HdFk5hYzl6jXV9F6ZTATyzqxxA/jharoAWIuKWe9EZKPVhr0rJZTcHJw35U1Wv3HbUPnIn/GmPRwtFkpBYxWYi0ffl9RVOYNnIHP64u0E67ArJCckm+pARBMqiD338dSXN7xFL1RcUTkny/s5Mk=
