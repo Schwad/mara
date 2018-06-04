@@ -6,5 +6,5 @@
 class ManageMessage
   include Interactor::Organizer
 
-  organize VerifyUser, HandleAnyCommands, UpdateUserLocation, CheckLocationStaleness, CheckTheWeather, RecordDataPoint, ThankTheUser
+  organize VerifyUser, UpdateUserLocation, HandleAnyCommands, CheckLocationStaleness, CheckTheWeather, RecordDataPoint, ThankTheUser
 end
