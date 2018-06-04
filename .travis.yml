@@ -5,6 +5,9 @@ cache: bundler
 rvm:
   - 2.4.4
 
+env:
+  - WUNDERGROUND_API_KEY=dummy_key
+  
 services:
   - postgresql
 
