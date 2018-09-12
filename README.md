@@ -31,13 +31,30 @@ The Bot is run as a background job with Sidekiq/Redis, and is initialized in the
 
 `web: rake mara:start && bundle exec rails server -p $PORT`
 
-To work with MaraBot in development, you fire it up with `rake mara:reset` (kills any active bots and starts a new one). If you are going from scratch, this will likely involve booting your `redis-server`, then `sidekiq`, then `rake mara:reset`.
+To work with MaraBot in development, you fire it up with `rake mara:reset` (kills any active bots and starts a new one). If you are going from scratch, this will likely involve booting your `redis-server`, then `sidekiq`, then `rake mara:reset`. __This implementation is likely to be revisited as we set up webhooks__
 
 This application uses the Interactor design pattern ([implemented with the interactor gem](https://github.com/collectiveidea/interactor)) to process bot interactions.
 
 For further background, here is an unofficial talk about this project given at [Isle of Ruby](https://2018.isleofruby.org/):
 
 [![VIDEO](https://i.imgur.com/JKcG9qZ.png)](https://www.youtube.com/watch?v=Qf0S29bJbPg)
+
+Webhook setup in development
+----------------------------
+
+The best way to use telegram bots long term is with webhooks. [You can read more about them here](https://medium.com/@xabaras/setting-your-telegram-bot-webhook-the-easy-way-c7577b2d6f72).
+
+* Set environment variables for 'bot_host' (the ngrok url) and 'webhook_key'
+
+* `rails s`
+
+* `ngrok http 3000` (you will need ngrok)
+
+Adding yourself as a user
+-------------------------
+
+This should happen immediately whenever someone contacts the bot. Again, in production this is meant to be a bot-only interface (except for analytics on our end). Hooking in, getting out, should be open for the user in the interactions with MaraBot.
+
 
 Documentation and Support
 -------------------------

@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/schwad/telegram_bot
-  revision: 186737ec66a632d066abbdc61b076b4da43dfe6e
+  remote: https://github.com/Schwad/telegram_bot_for_mara_bot
+  revision: d64581da870e1d371cccab6d167d07783f7298a2
   specs:
     telegram_bot (0.0.8)
       excon (>= 0.30.0)
