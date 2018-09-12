@@ -44,7 +44,7 @@ Webhook setup in development
 
 The best way to use telegram bots long term is with webhooks. [You can read more about them here](https://medium.com/@xabaras/setting-your-telegram-bot-webhook-the-easy-way-c7577b2d6f72).
 
-* Set environment variables for 'bot_host' (the ngrok url) and 'webhook_key'
+* Set environment variables for 'bot_host' (the ngrok url), 'mara_bot_key' and 'webhook_key'
 
 * `rails s`
 

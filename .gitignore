@@ -18,6 +18,7 @@ dump.rdb
 *.sassc
 .redcar/
 nicknotes.txt
+nicknotes.md
 .sass-cache
 /config/config.yml
 /coverage.data

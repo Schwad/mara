@@ -18,8 +18,6 @@ development:
   encoding: unicode
   database: mara_development
   pool:     5
-  username: mara
-  password:
   template: template0
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -46,14 +44,10 @@ test:
   encoding: unicode
   database: mara_test
   pool:     5
-  username: mara
-  password:
   template: template0
 
 production:
   adapter: postgresql
   database: mara_production
   pool: 5
-  username: mara
-  password:
   template: template0

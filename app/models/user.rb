@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
   validates :friendly_name, presence: true
   has_many :data_points
+
+  def reached_data_limit
+    data_points.where("created_at >= ?", Date.today.beginning_of_day).count >= 5
+  end
 end
