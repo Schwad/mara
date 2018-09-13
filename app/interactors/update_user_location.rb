@@ -9,8 +9,17 @@ class UpdateUserLocation
   def call
     puts 'Update user location'
     if context.message.location
-      context.user.update_columns(location_updated_at: context.message.date, location: context.message.location.full.to_s.chars[1..-2].join.delete(' '))
+      if location_ready_for_update
+        context.user.update_columns(location_updated_at: context.message.date, location: context.message.location.full.to_s.chars[1..-2].join.delete(' '))
+        context.user.save
+      end
       context.fail!
     end
+  end
+
+  private
+
+  def location_ready_for_update
+    context.user.updated_at < 30.minutes.ago || context.user.created_at > 30.minutes.ago
   end
 end

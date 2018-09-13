@@ -12,6 +12,6 @@ class User < ApplicationRecord
   has_many :data_points
 
   def reached_data_limit
-    data_points.where("created_at >= ?", Date.today.beginning_of_day).count >= 5
+    data_points.where("created_at >= ?", Date.today.beginning_of_day).count >= 5 || Time.now < sleep_until
   end
 end

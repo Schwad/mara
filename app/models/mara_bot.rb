@@ -13,7 +13,7 @@ class MaraBot
   # Environment variable for main mara bot.
   #
 
-  MARA_BOT_KEY = ENV['mara_bot_key']
+  MARA_BOT_KEY = Rails.application.credentials[Rails.env.to_sym][:mara_bot_key]
 
   ##
   # Instantiates the bot variable as a new Telegram bot.

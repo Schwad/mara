@@ -9,7 +9,7 @@ class CheckTheWeather
   def call
     puts 'Check the weather'
     context.response = 'Check the weather'
-    w_api = Wunderground.new(ENV['WUNDERGROUND_API_KEY']).conditions_for(context.user.location.delete(' '))['current_observation']
+    w_api = Wunderground.new(Rails.application.credentials[Rails.env.to_sym][:wunderground_api_key]).conditions_for(context.user.location.delete(' '))['current_observation']
     if w_api.blank?
       context.message.reply do |reply|
         reply.text = "hello again #{context.message.from.username}! For some reason our API is not able to get weather info from your location.\n\n If this keeps happening let Nick know and try to make a note of where you are. He can be reached at nicholas.schwaderer@gmail.com"

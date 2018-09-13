@@ -11,12 +11,11 @@ class VerifyUser
     if !User.exists?(friendly_name: context.message.from.username)
       puts 'Failed interactor'
       context.message.reply do |reply|
-        reply.text = "hello #{context.message.from.username} from verify user, you are *not* authorized"
+        reply.text = "hello #{context.message.from.username} from verify user, you are *not* authorized. To signup simply message 'signup'"
         reply.send_with(context.bot)
       end
       context.fail!
     end
-    context.incoming_message = context.message.get_command_for(context.bot)
     context.user = User.find_by(friendly_name: context.message.from.username)
     context.response = 'Verify User interactor'
   end

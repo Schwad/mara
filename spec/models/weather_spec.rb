@@ -4,7 +4,7 @@ describe Weather do
 
   it "builds a weather object upon successful WeatherUnderground response" do
     VCR.use_cassette 'model/weather' do
-      weather = Weather.new(Wunderground.new(ENV['WUNDERGROUND_API_KEY']).conditions_for('Lostwithiel, UK')['current_observation'])
+      weather = Weather.new(Wunderground.new(Rails.application.credentials[Rails.env.to_sym][:wunderground_api_key]).conditions_for('Lostwithiel, UK')['current_observation'])
       expect(weather.temp_c).not_to be_nil
       expect(weather.pressure_mb).not_to be_nil
     end
