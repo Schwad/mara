@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ##
-# Tracks message id's to ensure there are no repeats
+# Tracks message id's to ensure there are no repeats. Otherwise telegram would be liable to occasionally duplicate old (stale) messages.
 #
 
 class RejectRepeatMessages

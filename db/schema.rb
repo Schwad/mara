@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2018_09_13_143918) do
     t.string "friendly_name"
     t.text "chat_id"
     t.string "location"
-    t.datetime "location_updated_at", default: "2008-09-12 13:44:30"
+    t.datetime "location_updated_at", default: "2008-10-15 19:25:33"
     t.datetime "sleep_until"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

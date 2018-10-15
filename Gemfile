@@ -15,7 +15,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rainbow', '~> 2.2.2'
 gem 'sdoc'
-gem 'sidekiq'
 gem 'stripe'
 gem 'telegram_bot', git: 'https://github.com/Schwad/telegram_bot_for_mara_bot'
 gem 'wunderground'

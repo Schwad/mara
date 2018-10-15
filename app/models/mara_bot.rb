@@ -6,7 +6,6 @@
 # It currently does not process state or 'remember' conversations, so does not have persistence handling. This is likely to be developed at some point in the future.
 # Any bot interactions must be done explicitly through this object and not directly through the Telegram_Bot.
 class MaraBot
-  include Sidekiq::Worker
   include BotUtils
 
   ##
