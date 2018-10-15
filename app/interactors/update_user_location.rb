@@ -13,6 +13,7 @@ class UpdateUserLocation
         context.user.update_columns(location_updated_at: context.message.date, location: context.message.location.full.to_s.chars[1..-2].join.delete(' '))
         context.user.save
       end
+      
       context.fail!
     end
   end
