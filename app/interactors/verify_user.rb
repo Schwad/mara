@@ -11,7 +11,7 @@ class VerifyUser
     if !User.exists?(friendly_name: context.message.from.username)
       puts 'Failed interactor'
       context.message.reply do |reply|
-        reply.text = "hello #{context.message.from.username} from verify user, you are *not* authorized. To signup simply message 'signup'"
+        reply.text = "Hello #{context.message.from.username}, you are *not* authorized to use MaraBot yet. To signup simply message 'signup'"
         reply.send_with(context.bot)
       end
       context.fail!

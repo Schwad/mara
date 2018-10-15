@@ -10,7 +10,7 @@ class InspectMessageValidity
     puts 'Inspect message validity'
     if non_integer_value || value_too_large
       context.message.reply do |reply|
-        reply.text = "Hello #{context.message.from.username}, we are afraid that '#{context.incoming_message}' Is not a valid reply. Unless you are sending a valid command from the command list, please respond only with numbers from 0-10 so that they may be recorded. If something unexpected is happening here, get in touch with the maintainer at nicholas.schwaderer@gmail.com or on Telegram at @schwadererer."
+        reply.text = "We are afraid that '#{context.incoming_message}' is not a valid reply. Unless you are sending a valid command from the command list, please respond only with numbers from 0-10 so that they may be recorded. If something unexpected is happening here, get in touch with the maintainer at nicholas.schwaderer@gmail.com or on Telegram at @schwadererer."
         reply.send_with(context.bot)
       end
       context.fail!
