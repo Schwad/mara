@@ -19,8 +19,8 @@ class SignupUser
       else
         user = User.create(
           email: "#{SecureRandom.hex(20)}@gmail.com",
-          name: context.message.from.username,
-          friendly_name: context.message.from.username,
+          name: context.message.from.username || context.message.from.first_name,
+          friendly_name: context.message.from.username || context.message.from.first_name,
           chat_id: context.message.chat.id,
           password: SecureRandom.hex(20)
         )
