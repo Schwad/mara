@@ -8,7 +8,7 @@ class VerifyUser
 
   def call
     puts 'Verify User interactor'
-    if !User.exists?(friendly_name: context.message.from.username)
+    if !User.exists?(friendly_name: [ context.message.from.username, context.message.from.first_name ])
       puts 'Failed interactor'
       context.message.reply do |reply|
         reply.text = "Hello #{context.message.from.username}, you are *not* authorized to use MaraBot yet. To signup simply message 'signup'"
