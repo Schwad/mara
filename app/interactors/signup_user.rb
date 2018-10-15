@@ -27,7 +27,7 @@ class SignupUser
         if user.save
           @signup_message = 'You are now signed up to marabot! Welcome!'
         else
-          @signup_message = "Hmm, looks like there was an error. Try again, or contact nicholas.schwaderer@gmail.com for more help! Errors are #{user.errors.full_messages.join(",")}"
+          @signup_message = "Hmm, looks like there was an error. Try again, or contact nicholas.schwaderer@gmail.com for more help!"
         end
         context.message.reply do |reply|
           reply.text = @signup_message

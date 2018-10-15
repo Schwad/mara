@@ -16,7 +16,7 @@ class VerifyUser
       end
       context.fail!
     end
-    context.user = User.find_by(friendly_name: context.message.from.username)
+    context.user = User.find_by(friendly_name: [ context.message.from.username, context.message.from.first_name ])
     context.response = 'Verify User interactor'
   end
 end
