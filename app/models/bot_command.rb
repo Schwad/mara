@@ -20,7 +20,7 @@ class BotCommand
     if sleep_command_valid?
       user.sleep_until = eval "#{@sleep_time}.#{@sleep_value}.from_now"
       user.save
-      @message = "All locked in. You will not be pinged from now until at least #{user.sleep_until}"
+      @message = "All locked in. 💤 You will not be pinged from now until at least #{user.sleep_until}"
     else
       @message = "We are sorry, your sleep command is not valid. You can sleep the system for a certain number of hours or days, an example message would be 'sleep 4 days' or 'sleep 15 hours' in that format. Please try again."
     end

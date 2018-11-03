@@ -10,7 +10,7 @@ class ThankTheUser
   def call
     puts 'Thank the user'
     context.message.reply do |reply|
-      reply.text = "Thanks! It is all saved"
+      reply.text = "Thanks! Your data is saved #{['👍', '✅', '🙏', '📈'].sample}"
       reply.send_with(context.bot)
     end
     context.response = 'Thank the user'
