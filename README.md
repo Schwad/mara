@@ -84,6 +84,8 @@ Full documentation for this application is [available here](https://schwad.githu
 Misc
 ----------
 
+* Check how many hits to Wunderground API we are receiving [here](https://www.wunderground.com/weather/api/)
+
 
 Contributing
 ------------
