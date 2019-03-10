@@ -18,6 +18,7 @@ gem 'sdoc'
 gem 'stripe'
 gem 'telegram_bot', git: 'https://github.com/Schwad/telegram_bot_for_mara_bot'
 gem 'wunderground'
+gem 'rb-libsvm'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

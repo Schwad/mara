@@ -7,4 +7,8 @@ class DataPoint < ApplicationRecord
   belongs_to :user
   store :weather_data, accessors: %i[pressure temperature], coder: JSON
   serialize :full_weather_record, Hash
+
+  def self.mass_data_point_dump(value=:pressure)
+    DataPoint.all.map{|dp| [dp.send(value), dp.pain_level]}
+  end
 end

@@ -96,6 +96,12 @@ See CONTRIBUTORS.md
 Credits
 -------
 
+Todo
+-------
+
+* Build out utility to store and track data results over time (users - strategies - accuracy - daily)
+* Build out script to run in memory and write writeable data
+
 License
 -------
 

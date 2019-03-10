@@ -19,13 +19,13 @@ namespace :mara do
   # end
   desc 'seeds data for datapoints'
   task seed: :environment do
-    10.times do
-      User.create(
-        email: Faker::Internet.email,
-        password: SecureRandom.hex(20),
-        friendly_name: "#{Faker::Name.last_name}-control-group"
-      )
-    end
+    # 10.times do
+    #   User.create(
+    #     email: Faker::Internet.email,
+    #     password: SecureRandom.hex(20),
+    #     friendly_name: "#{Faker::Name.last_name}-control-group"
+    #   )
+    # end
     iterator = 1
     10000.times do
       puts "Now doing datapoint #{iterator}"

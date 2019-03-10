@@ -272,6 +272,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    rb-libsvm (1.4.3)
     rdoc (5.0.0)
     reek (4.8.1)
       codeclimate-engine-rb (~> 0.4.0)
@@ -440,6 +441,7 @@ DEPENDENCIES
   rails (~> 5.2.0)
   rails_layout
   rainbow (~> 2.2.2)
+  rb-libsvm
   reek
   rspec-rails
   rubocop
@@ -466,4 +468,4 @@ RUBY VERSION
    ruby 2.4.4p296
 
 BUNDLED WITH
-   1.16.2
+   1.16.6
